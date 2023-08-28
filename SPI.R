@@ -1,4 +1,12 @@
-library(fitdistrplus)  # Load the required library
+# Standardized Precipitation Index 
+# Input Data
+# Data : Monthly Data vector not matrix (monthly or seasonal precipitation)
+# scale : 1,3,12,48
+# nseas : number of season (monthly=12)
+# Example
+# Z=SPI(gamrnd(1,1,1000,1),3,12); 3-monthly scale, 
+# Notice that  the rest of the months of the fist year are removed.
+# eg. if scale =3, fist year data 3-12 SPI values are not estimated.library(fitdistrplus)  # Load the required library
 
 SPI <- function(Data, scale, nseas) {
   erase_yr <- ceiling(scale / 12)
